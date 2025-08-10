@@ -19,3 +19,23 @@ def check_guess(file_name,guess):
             return True
         else:
             return False
+        
+
+target = random_word("dataset.txt")
+print("You have 6 guesses")
+
+for i in range(6):  #creates 6*5 grid
+    print(f"Enter your guess no {i+1}")
+    guess = enter_word()
+
+    if check_guess("dataset.txt", guess):
+        if guess == target:
+            print("You've guessed the word correctly")
+            break
+        else:
+            print("Incorrect guess")
+    else:
+        print("That word isn't in the dictionary")
+
+else:
+    print("Game over ---- you've used all your guesses")
