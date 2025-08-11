@@ -6,11 +6,8 @@ def random_word(file_name):
         return random.choice(dataset).strip()
     
 def enter_word():
-    letters=[]
-    for i in range(5): # 5 letters
-        letter=(input(f"Enter letter no {i+1}: "))
-        letters.append(letter)
-    return "".join(letters) # to return the word as a string
+    word = input()
+    return word
 
 def check_guess(file_name,guess):
     with open(file_name, 'r') as file:
@@ -49,7 +46,7 @@ for i in range(6):  #creates 6*5 grid
             print("\nfeedback:\n" + feedback(guess,target))
 
     else:
-        print("That word isn't in the dictionary")
+        print("\nThat word isn't in the dictionary")
 
 else:
-    print("Game over ---- you've used all your guesses")
+    print(f"\nGame over ---- you've used all your guesses\nThe correct word is '{target}'")
