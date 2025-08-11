@@ -20,6 +20,18 @@ def check_guess(file_name,guess):
         else:
             return False
         
+### function for game logic
+def feedback(guess, target):
+    result = []
+    for i in range(len(guess)):
+        if guess[i] == target[i]:
+            result.append(guess[i] + " is in the right position")
+        elif guess[i] in target:
+            result.append(guess[i] + " is in the word but in the wrong position")
+        else:
+            result.append(guess[i] + " is not in the word")
+    return "\n".join(result)
+        
 
 target = random_word("dataset.txt")
 print("You have 6 guesses")
@@ -34,6 +46,8 @@ for i in range(6):  #creates 6*5 grid
             break
         else:
             print("Incorrect guess")
+            print("feedback:\n" + feedback(guess,target))
+
     else:
         print("That word isn't in the dictionary")
 
