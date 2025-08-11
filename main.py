@@ -8,7 +8,7 @@ def random_word(file_name):
 def enter_word():
     letters=[]
     for i in range(5): # 5 letters
-        letter=(input(f"Enter letter no {i+1}"))
+        letter=(input(f"Enter letter no {i+1}: "))
         letters.append(letter)
     return "".join(letters) # to return the word as a string
 
@@ -37,16 +37,16 @@ target = random_word("dataset.txt")
 print("You have 6 guesses")
 
 for i in range(6):  #creates 6*5 grid
-    print(f"Enter your guess no {i+1}")
+    print(f"\nEnter guess no {i+1}:-")
     guess = enter_word()
 
     if check_guess("dataset.txt", guess):
         if guess == target:
-            print("You've guessed the word correctly")
+            print("Congratulations you've guessed the word correctly!")
             break
         else:
-            print("Incorrect guess")
-            print("feedback:\n" + feedback(guess,target))
+            print("\nIncorrect guess")
+            print("\nfeedback:\n" + feedback(guess,target))
 
     else:
         print("That word isn't in the dictionary")
