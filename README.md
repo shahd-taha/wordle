@@ -12,7 +12,7 @@ Logical structure:-
 Functions:
 random_word: for the program to choose a random word from the dataset file and make it the target to be guessed.
 
-enter_word: for input handling takes guessed word from user letter by letter.
+enter_word: for input handling takes guessed word from user.
 
 check_guess: checks whether the guess provided by user is in the dataset or not.
 
